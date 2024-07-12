@@ -21,7 +21,7 @@ const postjob = (event) => {
         description: form_data.get("description"),
     };
     // console.log(Post_Job)
-    fetch("https://freelancer-platform-api.onrender.com/buyer/job_list/", {
+   fetch('https://freelancer-platform-api.onrender.com/buyer/job_list/', {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
