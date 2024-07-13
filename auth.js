@@ -47,7 +47,7 @@ const handleLogin = (event) => {
     fetch(`https://freelancer-platform-api.onrender.com/accounts/user_type/${username}/`)
             .then((res) => res.json())
             .then((user) => {
-                alert()
+                // alert()
                 localStorage.setItem('user_type', user.user_type)
                 localStorage.setItem('user_id', user.user_id)
                 }
