@@ -25,12 +25,9 @@ window.onload = () => {
                                     <div class="d-flex gap-3">
                                         <button class="btn btn-warning">Completed work</button>
                                         <button class="btn btn-warning"><a href="./reveiw.html" onclick="saveImportantData('${proposal.freelancer}','${proposal.job}')" class="text-decoration-none">Review Now</a></button>
-                                    </div>
-                                "}
-                            </div>
-                        `
+                                    </div>"}
+                            </div>`;
                     parent.appendChild(div)
-
                 }
             });
             localStorage.removeItem("job_id")
