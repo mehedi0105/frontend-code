@@ -44,6 +44,16 @@ const handleLogin = (event) => {
         password: formData.get('password'),
     };
     // console.log()
+    fetch(`https://freelancer-platform-api.onrender.com/accounts/user_type/${username}/`)
+                .then((res) => res.json())
+                .then((user) => {
+                    alert()
+                    localStorage.setItem('user_type', user.user_type)
+                    
+                    localStorage.setItem('user_id', user.user_id)
+                }
+                );
+    
     fetch("https://freelancer-platform-api.onrender.com/user/login/", {
         method: "POST",
         headers: {
@@ -53,16 +63,6 @@ const handleLogin = (event) => {
     })
         .then((res) => res.json())
         .then((data) => {
-
-            fetch(`https://freelancer-platform-api.onrender.com/accounts/user_type/${username}/`)
-                .then((res) => res.json())
-                .then((user) => {
-                    alert()
-                    localStorage.setItem('user_type', user.user_type)
-                    
-                    localStorage.setItem('user_id', user.user_id)
-                }
-                );
             console.log(data);
             localStorage.setItem('auth_token', data.key);
             if (data.key) {
