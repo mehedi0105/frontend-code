@@ -219,3 +219,17 @@ const details_page = (id) => {
             }
         })
 }
+
+const clientsJobLoad = (id, owner, title) => {
+    company = localStorage.getItem("user_id")
+    if (company === owner) {
+        localStorage.setItem('job_id', id)
+        localStorage.setItem('job_title', title)
+        window.location.href = "veiw.html"
+    }
+    else {
+        alert("only job post owner permited view proposal")
+    }
+
+
+}
