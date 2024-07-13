@@ -137,7 +137,9 @@ const details_page = (id) => {
     const token = localStorage.getItem("auth_token")
     const user_type = localStorage.getItem("user_type")
     // console.log(parent)
-    parent.innerHTML = ""
+    if (parent.innerHTML != "") {
+        parent.innerHTML = "";
+    }
     fetch(`https://freelancer-platform-api.onrender.com/buyer/job_details/${id}/`)
         .then((res) => res.json())
         .then((data) => {
