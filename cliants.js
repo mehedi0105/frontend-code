@@ -21,11 +21,11 @@ window.onload = () => {
                                 <h6 class="card-subtitle mb-2 text-muted">job-title: "${title}"</h6>
                                 <p class="card-text">message: "${proposal.proposal_post}"</p>
                                 <p class="card-text">message-date: "${proposal.created_at}"</p>
-                                ${proposal.is_accepted === false ? "<button onclick="ProposalAccept('${proposal.id}','${proposal.job}','${proposal.freelancer}','${proposal.proposal_post}')" class="btn btn-primary w-100">Hire Now</button>" : "
+                                ${proposal.is_accepted === false ? `<button onclick="ProposalAccept('${proposal.id}','${proposal.job}','${proposal.freelancer}','${proposal.proposal_post}')" class="btn btn-primary w-100">Hire Now</button>` : `
                                     <div class="d-flex gap-3">
                                         <button class="btn btn-warning">Completed work</button>
                                         <button class="btn btn-warning"><a href="./reveiw.html" onclick="saveImportantData('${proposal.freelancer}','${proposal.job}')" class="text-decoration-none">Review Now</a></button>
-                                    </div>"}
+                                    </div>`}
                             </div>`;
                     parent.appendChild(div)
                 }
