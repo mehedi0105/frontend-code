@@ -35,6 +35,7 @@ const handleLogin = (event) => {
     const form = document.getElementById("login-form");
     const formData = new FormData(form);
     username = formData.get('UserName');
+    localStorage.setItem('user_name', username)
     // console.log(username)
     // console.log(username.user_type)
     const loginFormData = {
@@ -58,7 +59,7 @@ const handleLogin = (event) => {
                 .then((user) => {
                     alert()
                     localStorage.setItem('user_type', user.user_type)
-                    localStorage.setItem('user_name', username)
+                    
                     localStorage.setItem('user_id', user.user_id)
                 }
                 );
