@@ -27,9 +27,6 @@ window.onload = () => {
                                         <button class="btn btn-warning"><a href="./reveiw.html" onclick="saveImportantData('${proposal.freelancer}','${proposal.job}')" class="text-decoration-none">Review Now</a></button>
                                     </div>
                                 "}
-
-                                    
-                                    `}
                             </div>
                         `
                     parent.appendChild(div)
