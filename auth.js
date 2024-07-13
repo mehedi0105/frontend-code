@@ -52,6 +52,7 @@ const handleLogin = (event) => {
                 localStorage.setItem('user_id', user.user_id)
                 }
                 );
+                atch((error) => console.error(error));
     
     fetch("https://freelancer-platform-api.onrender.com/user/login/", {
         method: "POST",
