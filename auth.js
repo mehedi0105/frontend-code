@@ -54,7 +54,11 @@ const handleLogin = (event) => {
         .then((res) => res.json())
         .then((data) => {
 
-            fetch(`https://freelancer-platform-api.onrender.com/accounts/user_type/${username}/`)
+            
+            console.log(data);
+            localStorage.setItem('auth_token', data.key);
+            if (data.key) {
+                fetch(`https://freelancer-platform-api.onrender.com/accounts/user_type/${username}/`)
                 .then((res) => res.json())
                 .then((user) => {
                     alert()
@@ -64,9 +68,6 @@ const handleLogin = (event) => {
                 }
                 );
 
-            console.log(data);
-            localStorage.setItem('auth_token', data.key);
-            if (data.key) {
                 window.location.href = './index.html';
             }
         })
